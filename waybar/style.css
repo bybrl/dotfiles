@@ -23,7 +23,7 @@ window#waybar {
 #language,
 #clock,
 #tray {
-	padding: 4px;
-	border: blue;
+	padding: 5px;
+	background-color: rgba(0,0,0,1);
 	
 }
