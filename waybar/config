@@ -3,7 +3,8 @@
     // "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 25, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
-    "spacing": 2, // Gaps between modules (4px)
+    "spacing": 6
+    , // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces", "custom/launcher", "custom/kitty",  "custom/firefox"],
     "modules-center": ["hyprland/window"],
@@ -17,6 +18,7 @@
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
+
         "format": "{name} {icon}",
         "format-icons": {
             "locked": "",
@@ -32,6 +34,7 @@
         "on-click-middle": "wtype -k escape",
         "on-click-right": "jgmenu_run",
         "color": "#FF6347",
+        "button": true,
     },
     "custom/firefox":{
     	"format": "",
