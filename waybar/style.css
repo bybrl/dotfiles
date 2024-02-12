@@ -1,29 +1,73 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif, JetBrainsMono Nerd Font Mono;
+    font-size: 15px;
 }
 
-window#waybar {
-    background-color: transparent;
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
-    color: #ffffff;
-    transition-property: background-color;
-    transition-duration: .5s;
+window#waybar { 
+     background-color: rgba(0,0,0,0); 
+/*     border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
+/*     color: #ffffff; */
+/*     transition-property: background-color; */
+/*     transition-duration: .5s; */
+} 
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
 }
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.focused {
+    background-color: #64727D;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+
+window > box {
+	margin: 10px;
+	border-radius: 20px;
+    background-color: #bf93f9;
+    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+    color: black;
+}
+
 #custom-firefox {
 	color: #FF6347;
+	font-size: 30px;
 }
-#idle_inhibitor,
-#pulseaudio,
-#network,
-#cpu,
-#memory,
-#temperature,
-#language,
-#clock,
-#tray {
-	border-radius: 10px;
-	background-color: rgba(0,0,0,1);
+#custom-kitty {
+	font-size: 30px;
 	
 }
+#custom-launcher {
+	font-size: 30px;
+}
+#custom-arch {
+	font-size: 20px;
+}
+
+
+

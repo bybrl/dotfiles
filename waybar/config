@@ -1,14 +1,14 @@
 {
    	"layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 25, // Waybar height (to be removed for auto height)
+    "height": 18, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
-    "spacing": 6
-    , // Gaps between modules (4px)
+    "spacing": 8,
+    // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces", "custom/launcher", "custom/kitty",  "custom/firefox"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "hyprland/language", "clock", "tray"],
+    "modules-center": ["clock", "custom/arch"],
+    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "hyprland/language", "tray"],
     "hyprland/workspaces": {
         	 "on-scroll-up": "hyprctl dispatch workspace e+1",
         	 "on-scroll-down": "hyprctl dispatch workspace e-1",
@@ -18,7 +18,6 @@
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
-
         "format": "{name} {icon}",
         "format-icons": {
             "locked": "",
@@ -27,18 +26,20 @@
     },
 
     "custom/launcher": {
-        "format": "",
+        "format": "󱗼",
         "tooltip": false,
-        "min-length": 4,
 	    "on-click": "wofi --show drun -I -a -n -W 500 -H 376 -s ~/.config/wofi/themes/dracula.css ",
-        "on-click-middle": "wtype -k escape",
-        "on-click-right": "jgmenu_run",
         "color": "#FF6347",
         "button": true,
     },
+    "custom/arch":{
+    	"format": "󰣇",
+    	"on-click": "kitty --class float $HOME/.local/share/bin/syu"
+    },
     "custom/firefox":{
     	"format": "",
-        "on-click": "firefox"
+        "on-click": "firefox",
+        "type": "button",
     },
     "custom/kitty":{
     	"format": "",
