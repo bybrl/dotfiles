@@ -1,73 +1,160 @@
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif, JetBrainsMono Nerd Font Mono;
-    font-size: 15px;
-}
-
-window#waybar { 
-     background-color: rgba(0,0,0,0); 
-/*     border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
-/*     color: #ffffff; */
-/*     transition-property: background-color; */
-/*     transition-duration: .5s; */
-} 
-
-button {
-    /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
-    /* Avoid rounded borders under each button name */
-    border: none;
-    border-radius: 0;
-}
-
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-button:hover {
-    background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
-#workspaces button {
-    padding: 0 5px;
-    background-color: transparent;
-    color: #ffffff;
-}
-
-#workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#workspaces button.focused {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
-#workspaces button.urgent {
-    background-color: #eb4d4b;
+  border: none;
+  border-radius: 6px;
+  min-height: 0;
+  font-family: Material Design Icons, JetBrainsMono Nerd Font;
+  font-size: 13px;
 }
 
 
-window > box {
-	margin: 10px;
-	border-radius: 20px;
-    background-color: #bf93f9;
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
-    color: black;
+window#waybar {
+  background-color: #181825;
+  transition-property: background-color;
+  transition-duration: 0.5s;
 }
-
 #custom-firefox {
 	color: #FF6347;
 	font-size: 30px;
+	padding-right: 12px;
+	padding-left: 9px;
 }
 #custom-kitty {
+	color: yellow;
 	font-size: 30px;
-	
+	padding-right: 9px;
+	padding-left: 9px;
 }
 #custom-launcher {
-	font-size: 30px;
+	color: white;
+	font-size: 26px;
+	padding-right: 9px;
+	padding-left: 9px;
 }
 #custom-arch {
-	font-size: 20px;
+
 }
 
 
+window#waybar.hidden {
+  opacity: 0.5;
+}
 
+#workspaces {
+  background-color: transparent;
+}
+
+#workspaces button {
+  all: initial; /* Remove GTK theme values (waybar #1351) */
+  min-width: 0; /* Fix weird spacing in materia (waybar #450) */
+  box-shadow: inset 0 -3px transparent; /* Use box-shadow instead of border so the text isn't offset */
+  padding: 6px 18px;
+  margin: 6px 3px;
+  border-radius: 4px;
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+}
+
+#workspaces button.active {
+  color: #1e1e2e;
+  background-color: #cdd6f4;
+}
+
+#workspaces button:hover {
+ box-shadow: inherit;
+ text-shadow: inherit;
+ color: #1e1e2e;
+ background-color: #cdd6f4;
+}
+
+#workspaces button.urgent {
+  background-color: #f38ba8;
+}
+
+#memory,
+#custom-power,
+#battery,
+#backlight,
+#pulseaudio,
+#network,
+#clock,
+#tray {
+  border-radius: 4px;
+  margin: 6px 3px;
+  padding: 6px 12px;
+  background-color: #1e1e2e;
+  color: #181825;
+}
+
+#custom-power {
+  margin-right: 6px;
+}
+
+#custom-logo {
+	padding-right: 9px;
+	padding-left: 9px;
+	font-size: 26px;
+  border-radius: 8px 0px 0px 8px;
+  color: #1793d1;
+}
+
+#memory {
+  background-color: #fab387;
+}
+#battery {
+  background-color: #f38ba8;
+}
+@keyframes blink {
+  to {
+    background-color: #f38ba8;
+    color: #181825;
+  }
+}
+
+#battery.warning,
+#battery.critical,
+#battery.urgent {
+  background-color: #ff0048;
+  color: #181825;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+#battery.charging {
+  background-color: #a6e3a1;
+}
+
+#backlight {
+  background-color: #fab387;
+}
+
+#pulseaudio {
+  background-color: #f9e2af;
+}
+
+#network {
+  background-color: #94e2d5;
+  padding-right: 17px;
+}
+
+#clock {
+  font-family: JetBrainsMono Nerd Font;
+  background-color: #cba6f7;
+}
+
+#custom-power {
+  background-color: #f2cdcd;
+}
+
+
+tooltip {
+border-radius: 8px;
+padding: 15px;
+background-color: white;
+}
+
+tooltip label {
+padding: 5px;
+background-color: white;
+}

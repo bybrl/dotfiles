@@ -6,7 +6,6 @@ kde.org
 kdedefaults
 libaccounts-glib
 pulse
-rofi
 session
 spotify
 xsettingsd
@@ -29,3 +28,13 @@ kwinrc
 kwinrulesrc
 kxkbrc
 mimeapps.list
+Code
+Cemu
+thunar
+eww
+gen-img
+kactivitymanagerdrc
+pavucontrol.ini
+user-dirs.dirs
+user-dirs.locale
+waypaper
