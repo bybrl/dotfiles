@@ -2,15 +2,14 @@
     "layer": "top",
     "position": "top",
     "spacing": 0,
-    "height": 34,
+    "height": 42,
     "modules-left": [
         "custom/logo",
-        "hyprland/workspaces","custom/launcher", 
-        "custom/kitty",  "custom/firefox",
+        "hyprland/workspaces"
     ],
     "modules-center": [
-        "clock",
-        "custom/arch"
+        "custom/spotify",
+        "clock"
     ],
     "modules-right": [
         "tray",
@@ -21,27 +20,27 @@
         "custom/power"
     ],
     "custom/launcher": {
-            "format": "󱗼",
-            "tooltip-format": "Wofi drun Menu",
-    	    "on-click": "wofi --show drun -I -a -n -W 500 -H 376 -s ~/.config/wofi/themes/dracula.css ",
-            "color": "#FF6347",
-            "button": true,
-        },
-        "custom/logo":{
-        	"format": "",
-        	"tooltip-format": "Full system upgrade",
-        	"on-click": "kitty --class float $HOME/.local/share/bin/syu"
-        },
-        "custom/firefox":{
-        	"format": "",
-            "on-click": "firefox",
-            "tooltip-format": "Firefox web browser",
-        },
-        "custom/kitty":{
-        	"format": "󰄛",
-        	"tooltip-format": "Kitty terminal",
-        	"on-click": "kitty $HOME"
-        },
+        "format": "󱗼",
+        "tooltip-format": "Wofi drun Menu",
+        "on-click": "wofi --show drun -I -a -n -W 500 -H 376 -s ~/.config/wofi/themes/dracula.css",
+        "color": "#FF6347",
+        "button": true
+    },
+    "custom/logo": {
+        "format": "",
+        "tooltip-format": "Full system upgrade",
+        "on-click": "kitty --class float $HOME/.local/share/bin/syu"
+    },
+    "custom/firefox": {
+        "format": "",
+        "on-click": "firefox",
+        "tooltip-format": "Firefox web browser"
+    },
+    "custom/kitty": {
+        "format": "",
+        "tooltip-format": "Kitty terminal",
+        "on-click": "kitty $HOME"
+    },
     "wlr/taskbar": {
         "format": "{icon}",
         "on-click": "activate",
@@ -67,12 +66,20 @@
             "active": "󱓻",
             "urgent": "󱓻"
         },
+        "custom/spotify": {
+            "format": "asdasdasd",
+            //"return-type": "json",
+            //"exec": "$HOME/playerctl_meta",
+            //"interval": 1,
+            "on-click": "playerctl --player=spotify play-pause"
+        },
         "persistent_workspaces": {
             "1": [],
             "2": [],
             "3": [],
             "4": [],
-            "5": []
+            "5": [],
+            "6": []
         }
     },
     "memory": {
@@ -84,15 +91,15 @@
         "spacing": 10
     },
     "clock": {
-    	"timezone": "America/Chicago",
+        "timezone": "America/Chicago",
         "tooltip-format": "<tt>{calendar}</tt>",
         "format-alt": "  {:%a, %d %b %Y}",
         "format": "  {:%I:%M %p}"
     },
     "network": {
-        "format-wifi" : "{name},{icon}",
+        "format-wifi": "{name},{icon}",
         "format-ethernet": "{ipaddr}/{cidr} 󰀂",
-        "tooltip-format": "{ifname} via {gwaddr} 󰀂",
+        "tooltip-format": "{ifname} via {gwaddr} 󰀂"
     },
     "pulseaudio": {
         "format": "Volume: {volume}% {icon}",
@@ -101,7 +108,7 @@
         "format-muted": "󰝟",
         "format-icons": {
             "headphone": "",
-            "default": ["󰖀","󰕾",""]
+            "default": ["󰖀", "󰕾", ""]
         },
         "on-click": "pamixer -t",
         "scroll-step": 1
