@@ -1,0 +1,5 @@
+#!/bin/bash
+killall waybar
+nohup waybar > /dev/null &
+sleep 0.2
+clear
